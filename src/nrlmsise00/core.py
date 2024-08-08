@@ -17,6 +17,7 @@ from __future__ import absolute_import, division, print_function
 from functools import wraps
 
 import numpy as np
+import pandas as pd
 
 from ._nrlmsise00 import gtd7, gtd7d
 
@@ -154,6 +155,7 @@ def msise_model(time, alt, lat, lon, f107a, f107, ap,
 	The solar and geomagnetic indices have to be provided, so far the values
 	are not included in the module.
 	"""
+	time = pd.to_datetime(time)
 	year = time.year
 	doy = int(time.strftime("%j"))
 	sec = (time.hour * 3600.
