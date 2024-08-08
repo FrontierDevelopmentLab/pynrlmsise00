@@ -60,8 +60,8 @@ version = find_meta("version", meta_path)
 
 if __name__ == "__main__":
 	# update git submodules
-	if path.exists(".git"):
-		check_call(["git", "submodule", "update", "--init", "--recursive"])
+	#if path.exists(".git"):
+	#	check_call(["git", "submodule", "update", "--init", "--recursive"])
 
 	setup(name=name,
 		version=version,
